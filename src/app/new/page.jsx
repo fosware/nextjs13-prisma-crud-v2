@@ -44,7 +44,7 @@ function NewPage({ params }) {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-[calc(90vh-3rem)] flex justify-center items-center">
       <form className="bg-slate-800 p-10 mx-5 max-w-prose" onSubmit={onSubmit}>
         <label htmlFor="title" className="font-bold text-sm">
           Titulo de la tarea
