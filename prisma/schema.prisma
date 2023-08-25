@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// DEPLOY in vercel
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+
+// FOR LOCAL HOST 
+// datasource db {
+//  provider = "sqlite"
+//  url      = env("DATABASE_URL")
+//}
+
+
+model Task {
+  id Int @id @default(autoincrement())
+  title String
+  description String?
+  createdAt DateTime @default(now())
+}
